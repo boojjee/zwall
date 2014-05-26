@@ -23,20 +23,23 @@ var userid = "47710748";
 module.exports = {
 
   index: function(req, res, next){
-    // Instagram.set('client_id', 'c2d7726b5d5e42138eddcd08c84f80f7');
-    // Instagram.set('client_secret', '4c512b19c3d84275827bde3afd70221d');
-    // Instagram.set('callback_url', 'http://wall-zocialprint.herokuapp.com/wall/callback');
-    // Instagram.set('redirect_uri', 'http://app.selfieprint.com/');
-    // Instagram.set('maxSockets', 10);
-    // Instagram.media.subscribe();
+    Instagram.set('client_id', 'c2d7726b5d5e42138eddcd08c84f80f7');
+    Instagram.set('client_secret', '4c512b19c3d84275827bde3afd70221d');
+    Instagram.set('callback_url', 'http://zwall.herokuapp.com/wall/callback');
+    Instagram.set('redirect_uri', 'http://zwall.herokuapp.com/wall');
+    Instagram.set('maxSockets', 10);
+    Instagram.media.subscribe();
   },
 
   getCallback: function(req, res, next){
-    console.log("get")
+    console.log("get");
+    var handshake =  Instagram.subscriptions.handshake(req, res);
   },
 
   postCallback: function(req, res, next){
     console.log("post")
+    var data = req.body;
+    console.log(data)
   },
 
 

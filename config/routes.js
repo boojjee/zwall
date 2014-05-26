@@ -36,6 +36,11 @@ module.exports.routes = {
     view: 'home/index'
   },
 
+  'get /wall': {
+    controller: 'Wall',
+    action: 'index'
+  }
+
   'get /wall/callback': {
     controller: 'Wall',
     action: 'getCallback'
