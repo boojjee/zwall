@@ -28,7 +28,15 @@ module.exports = {
     Instagram.set('callback_url', 'http://zwall.herokuapp.com/wall/callback');
     Instagram.set('redirect_uri', 'http://zwall.herokuapp.com/wall');
     Instagram.set('maxSockets', 10);
-    Instagram.media.subscribe();
+    var sub = Instagram.subscriptions.subscribe({
+      object: 'tag',
+      object_id: 'lollapalooza',
+      aspect: 'media',
+      callback_url: 'http://YOUR_URL.com/callback',
+      type: 'subscription',
+      id: '#'
+    });
+    res.json(sub)
   },
 
   getCallback: function(req, res, next){
