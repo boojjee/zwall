@@ -39,7 +39,13 @@
           crossDomain: true,
           dataType: 'jsonp'
       }).done(function (data) {
-          $("#wall-container").prepend('<div class="Hvh"><img width="240" height="240" src="'+data.data[0].images.standard_resolution.url+'" /></div>"');
+          dataImageSTD = data.data[0].images.standard_resolution.url;
+          
+          ele = $('<div>', {class: 'Hvh'}).html( 
+            $('<img>',{id:'theImg',src: dataImageSTD, width: 240, height: 240})
+          );
+
+          $("#wall-container").prepend(ele);
 
           last = $('#wall-container div:first-child');
           lastSrc = $('#wall-container div:first-child').find('img').attr('src');
@@ -48,9 +54,6 @@
             last.remove();
           }
           last = $('#wall-container').find(':first-child').removeClass('Hvh');
-
-
-
 
           console.log(data.data[0].images.standard_resolution.url)
       }); 
