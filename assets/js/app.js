@@ -39,7 +39,7 @@
           crossDomain: true,
           dataType: 'jsonp'
       }).done(function (data) {
-          $("#wall-container").append('<div><img scr="'+data.data[0].images.standard_resolution.url+'" /></div> "');
+          $("#wall-container").append('<div><img src="'+data.data[0].images.standard_resolution.url+'" /></div>"');
           console.log(data.data[0].images.standard_resolution.url)
       }); 
     });
