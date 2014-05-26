@@ -36,7 +36,7 @@ module.exports = {
       type: 'subscription',
       id: '#'
     });
-    res.json(sub)
+    res.view();
   },
 
   getCallback: function(req, res, next){
@@ -45,9 +45,16 @@ module.exports = {
   },
 
   postCallback: function(req, res, next){
+    var socket = req.socket;
+    var io = sails.io;
+
     console.log("post")
-    var data = req.body;
-    console.log(data)
+    var databody = req.body;
+
+    _.each(databody, function(data){
+      var url = 'https://api.instagram.com/v1/tags/' + tag.object_id + '/media/recent?client_id=c2d7726b5d5e42138eddcd08c84f80f7';
+      io.sockets.emit('show', { show: url });
+    })
   },
 
 
