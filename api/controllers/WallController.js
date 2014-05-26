@@ -28,9 +28,11 @@ module.exports = {
     Instagram.set('callback_url', 'http://zwall.herokuapp.com/wall/callback');
     Instagram.set('redirect_uri', 'http://zwall.herokuapp.com/wall');
     Instagram.set('maxSockets', 10);
+    var req_tag = req.body("tag")
+    console.log(req_tag)
     var sub = Instagram.subscriptions.subscribe({
       object: 'tag',
-      object_id: 'phuket',
+      object_id: req_tag,
       aspect: 'media',
       callback_url: 'http://zwall.herokuapp.com/wall/callback',
       type: 'subscription',
