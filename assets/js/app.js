@@ -39,7 +39,19 @@
           crossDomain: true,
           dataType: 'jsonp'
       }).done(function (data) {
-          $("#wall-container").append('<div><img src="'+data.data[0].images.standard_resolution.url+'" /></div>"');
+          $("#wall-container").prepend('<div class="Hvh"><img width="240" height="240" src="'+data.data[0].images.standard_resolution.url+'" /></div>"');
+
+          last = $('#wall-container div:first-child');
+          lastSrc = $('#wall-container div:first-child').find('img').attr('src');
+          nextSrc = $('#wall-container div:nth-child(2)').find('img').attr('src');
+          if( lastSrc === nextSrc ) {
+            last.remove();
+          }
+          last = $('#wall-container').find(':first-child').removeClass('Hvh');
+
+
+
+
           console.log(data.data[0].images.standard_resolution.url)
       }); 
     });
