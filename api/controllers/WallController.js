@@ -30,7 +30,7 @@ module.exports = {
     Instagram.set('maxSockets', 10);
     criteria = _.merge({}, req.params.all(), req.body);
     var req_tag = criteria.tag
-    console.log(req_tag)
+    
     var sub = Instagram.subscriptions.subscribe({
       object: 'tag',
       object_id: req_tag,
@@ -39,6 +39,7 @@ module.exports = {
       type: 'subscription',
       id: '#'
     });
+    
     res.view();
   },
 
