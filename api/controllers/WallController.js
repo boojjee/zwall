@@ -30,9 +30,9 @@ module.exports = {
     Instagram.set('maxSockets', 10);
     var sub = Instagram.subscriptions.subscribe({
       object: 'tag',
-      object_id: 'lollapalooza',
+      object_id: 'phuket',
       aspect: 'media',
-      callback_url: 'http://YOUR_URL.com/callback',
+      callback_url: 'http://zwall.herokuapp.com/wall/callback',
       type: 'subscription',
       id: '#'
     });
