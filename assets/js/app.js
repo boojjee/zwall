@@ -39,7 +39,8 @@
           crossDomain: true,
           dataType: 'jsonp'
       }).done(function (data) {
-          $("wall-container").append(data)
+          // $("wall-container").append(data)
+          console.log(data)
       }); 
     });
 
