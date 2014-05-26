@@ -41,7 +41,7 @@
       }).done(function (data) {
           dataImageSTD = data.data[0].images.standard_resolution.url;
           
-          ele = $('<div>', {class: 'Hvh'}).html( 
+          ele = $('<div>', {class: 'item Hvh'}).html( 
             $('<img>',{id:'theImg',src: dataImageSTD, width: 240, height: 240})
           );
 
