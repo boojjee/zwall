@@ -39,7 +39,7 @@ module.exports.routes = {
   'get /wall': {
     controller: 'Wall',
     action: 'index'
-  }
+  },
 
   'get /wall/callback': {
     controller: 'Wall',
