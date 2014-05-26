@@ -28,7 +28,8 @@ module.exports = {
     Instagram.set('callback_url', 'http://zwall.herokuapp.com/wall/callback');
     Instagram.set('redirect_uri', 'http://zwall.herokuapp.com/wall');
     Instagram.set('maxSockets', 10);
-    var req_tag = req.body("tag")
+    criteria = _.merge({}, req.params.all(), req.body);
+    var req_tag = criteria.tag
     console.log(req_tag)
     var sub = Instagram.subscriptions.subscribe({
       object: 'tag',
