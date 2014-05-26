@@ -52,7 +52,8 @@ module.exports = {
     var databody = req.body;
 
     _.each(databody, function(data){
-      var url = 'https://api.instagram.com/v1/tags/' + tag.object_id + '/media/recent?client_id=c2d7726b5d5e42138eddcd08c84f80f7';
+      console.log();
+      var url = 'https://api.instagram.com/v1/tags/' + data.object_id + '/media/recent?client_id=c2d7726b5d5e42138eddcd08c84f80f7';
       io.sockets.emit('show', { show: url });
     })
   },
