@@ -39,13 +39,13 @@
           crossDomain: true,
           dataType: 'jsonp'
       }).done(function (data) {
-          console.dir(data);
+    
           dataImageSTD = data.data[0].images.standard_resolution.url;
           
           ele = $('<div>', {class: 'item Hvh'}).html( 
-            $('<img>',{id: data.data[0].id,src: dataImageSTD, width: 240, height: 240})
+            $('<img>',{id: data.data[0].id, src: dataImageSTD, width: 240, height: 240})
           );
-          console.log($('#wall-container img#"'+data.data[0].id+'"') );
+          
 
           $("#wall-container").prepend(ele);  
 
