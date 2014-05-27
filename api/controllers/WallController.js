@@ -40,7 +40,11 @@ module.exports = {
       id: '#'
     });
     
-    res.view();
+    var url = 'https://api.instagram.com/v1/tags/' + req_tag + '/media/recent?client_id=c2d7726b5d5e42138eddcd08c84f80f7';
+    
+    res.view({
+      data: url
+    });
   },
 
   getCallback: function(req, res, next){
