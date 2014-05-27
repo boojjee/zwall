@@ -46,9 +46,9 @@
             $('<img>',{id: data.data[0].id,src: dataImageSTD, width: 240, height: 240})
           );
           console.log($('#wall-container img#"'+data.data[0].id+'"') );
-          if($('#wall-container img#"'+data.data[0].id+'"') != null || $('#wall-container img#"'+data.data[0].id+'"') !== ""){
-            $("#wall-container").prepend(ele);  
-          }
+
+          $("#wall-container").prepend(ele);  
+
           
 
           last = $('#wall-container div:first-child');
