@@ -43,10 +43,13 @@
           dataImageSTD = data.data[0].images.standard_resolution.url;
           
           ele = $('<div>', {class: 'item Hvh'}).html( 
-            $('<img>',{id:'theImg',src: dataImageSTD, width: 240, height: 240})
+            $('<img>',{id: data.data[0].id,src: dataImageSTD, width: 240, height: 240})
           );
-
-          $("#wall-container").prepend(ele);
+          console.log($('#wall-container img[id=*"'+data.data[0].id+'"]') );
+          if($('#wall-container img[id=*"'+data.data[0].id+'"]') != null){
+            $("#wall-container").prepend(ele);  
+          }
+          
 
           last = $('#wall-container div:first-child');
           lastSrc = $('#wall-container div:first-child').find('img').attr('src');
