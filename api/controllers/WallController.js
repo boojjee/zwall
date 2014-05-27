@@ -42,7 +42,7 @@ module.exports = {
     });
     
     var url = 'https://api.instagram.com/v1/tags/' + req_tag + '/media/recent?client_id=c2d7726b5d5e42138eddcd08c84f80f7';
-    request.post(  url , { form : criteria },
+    request.get(  url ,
       function (error, response, body) {
         data_req = JSON.parse(body);
         res.view({
