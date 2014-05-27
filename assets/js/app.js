@@ -39,6 +39,7 @@
           crossDomain: true,
           dataType: 'jsonp'
       }).done(function (data) {
+          console.dir(data);
           dataImageSTD = data.data[0].images.standard_resolution.url;
           
           ele = $('<div>', {class: 'item Hvh'}).html( 
