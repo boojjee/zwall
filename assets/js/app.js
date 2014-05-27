@@ -46,8 +46,9 @@
             $('<img>',{id: data.data[0].id, src: dataImageSTD, width: 240, height: 240})
           );
 
-
-          $("#wall-container").prepend(ele);  
+          var $newItems = $(ele);
+          $('#wall-container').prepend( $newItems).isotope( 'reloadItems' ).isotope({ sortBy: 'original-order' });
+          // $("#wall-container").prepend(ele);  
 
           
 
