@@ -1,5 +1,7 @@
 <div id="wall-container">
-  <% _.each(data, function(dd){ %>
-    <%=dd%>
+  <% _.each(data.data, function(dd){ %>
+    <div class="item">
+      <img id="<%=dd.id%>" src="<%=dd.images.standard_resolution.url %>" style="width: 240px; height: 240px;">
+    </div>
   <% }); %>
 </div>
