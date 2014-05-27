@@ -19,6 +19,7 @@ var url1 = "https://api.instagram.com/v1/tags/";
 var url2 = "/media/recent?client_id=c2d7726b5d5e42138eddcd08c84f80f7";
 var token = "access_token=47710748.5b9e1e6.9d4b692d1a2a40c3911905a85671cb24";
 var userid = "47710748";
+var request = require('request');
 
 module.exports = {
 
@@ -41,10 +42,15 @@ module.exports = {
     });
     
     var url = 'https://api.instagram.com/v1/tags/' + req_tag + '/media/recent?client_id=c2d7726b5d5e42138eddcd08c84f80f7';
-    
-    res.view({
-      data: url
-    });
+    request.post(  url , { form : criteria },
+      function (error, response, body) {
+        data_req = JSON.parse(body);
+        res.view({
+          data: data_req
+        });
+      }
+    );
+
   },
 
   getCallback: function(req, res, next){
