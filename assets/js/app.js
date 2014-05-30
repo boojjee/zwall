@@ -47,18 +47,18 @@
           );
 
           var $newItems = $(ele);
-          $('#wall-container .items').prepend($newItems).isotope( 'reloadItems' ).isotope({ sortBy: 'original-order' });
+          $('.items').prepend($newItems).isotope( 'reloadItems' );
           // $("#wall-container").prepend(ele);  
 
           
 
-          last = $('#wall-container .items div:first-child');
-          lastSrc = $('#wall-container .items div:first-child').find('img').attr('src');
-          nextSrc = $('#wall-container .items div:nth-child(2)').find('img').attr('src');
+          last = $('.items div:first-child');
+          lastSrc = $('.items div:first-child').find('img').attr('src');
+          nextSrc = $('.items div:nth-child(2)').find('img').attr('src');
           if( lastSrc === nextSrc ) {
             last.remove();
           }
-          last = $('#wall-container .items').find(':first-child').removeClass('Hvh');
+          last = $('.items').find(':first-child').removeClass('Hvh');
 
           console.log(data.data[0].images.standard_resolution.url)
       }); 
