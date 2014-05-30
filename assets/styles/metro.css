@@ -3,12 +3,11 @@ body, div, p, h1, h2, a, span, img, ul, li { margin: 0; padding: 0; }
 ul { list-style: none; }
 
 /* webfonts */
-@font-face { font-family: 'OpenSansLight'; src: url('../webfonts/opensans-light-webfont.eot'); src: url('../webfonts/opensans-light-webfont.eot?#iefix') format('embedded-opentype'), url('../webfonts/opensans-light-webfont.woff') format('woff'), url('../webfonts/opensans-light-webfont.ttf') format('truetype'), url('../webfonts/opensans-light-webfont.svg#OpenSansLight') format('svg'); font-weight: normal; font-style: normal; }
 
 /* general */
 html, body { width: 100%; height: 100%; }
 html { background: #111; color: #fff; }
-body { font-size: 100%; font-family: 'OpenSansLight', sans-serif; line-height: 1em; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; }
+body { font-size: 100%; font-family: 'Hevertica', sans-serif; line-height: 1em; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; }
 a, a img { border: none; }
 img, object, embed { max-width: 100%; height: auto; }
 .clearfix:before, .clearfix:after { content: ""; display: table; }
