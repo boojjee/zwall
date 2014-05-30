@@ -42,8 +42,8 @@
           console.log(data);
           dataImageSTD = data.data[0].images.standard_resolution.url;
           
-          ele = $('<div>', {class: 'item Hvh'}).html( 
-            $('<img>',{id: data.data[0].id, src: dataImageSTD, width: 240, height: 240})
+          ele = $('<div>', {class: 'box Hvh'}).html( 
+            $('<img>',{id: data.data[0].id, src: dataImageSTD })
           );
 
           var $newItems = $(ele);
@@ -52,13 +52,13 @@
 
           
 
-          last = $('#wall-container div:first-child');
-          lastSrc = $('#wall-container div:first-child').find('img').attr('src');
-          nextSrc = $('#wall-container div:nth-child(2)').find('img').attr('src');
+          last = $('#wall-container .items div:first-child');
+          lastSrc = $('#wall-container .items div:first-child').find('img').attr('src');
+          nextSrc = $('#wall-container .items div:nth-child(2)').find('img').attr('src');
           if( lastSrc === nextSrc ) {
             last.remove();
           }
-          last = $('#wall-container').find(':first-child').removeClass('Hvh');
+          last = $('#wall-container .items').find(':first-child').removeClass('Hvh');
 
           console.log(data.data[0].images.standard_resolution.url)
       }); 
