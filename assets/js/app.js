@@ -47,20 +47,19 @@
           );
 
           var $newItems = $(ele);
-          $('.items').prepend($newItems).isotope( 'reloadItems' );
-
-
+          
+          // $("#wall-container").prepend(ele);  
+          $('.items').prepend($newItems).isotope( 'reloadItems' ).isotope({ sortBy: 'original-order' });
           
 
           last = $('.items div:first-child');
           lastSrc = $('.items div:first-child').find('img').attr('src');
-          nextSrc = $('.items div:nth-child(2)').find('img').attr('src');
+          nextSrc = $('items div:nth-child(2)').find('img').attr('src');
           if( lastSrc === nextSrc ) {
             last.remove();
           }
           last = $('.items').find(':first-child').removeClass('Hvh');
 
-          console.log(data.data[0].images.standard_resolution.url)
       }); 
     });
 
