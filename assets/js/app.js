@@ -48,7 +48,7 @@
 
           var $newItems = $(ele);
           $('.items').prepend($newItems).isotope( 'reloadItems' );
-          // $("#wall-container").prepend(ele);  
+
 
           
 
