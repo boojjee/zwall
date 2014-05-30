@@ -36,6 +36,7 @@ module.exports = {
       object: 'tag',
       object_id: req_tag,
       aspect: 'media',
+      verify_token: '47710748.5b9e1e6.9d4b692d1a2a40c3911905a85671cb24',
       callback_url: 'http://zwall.herokuapp.com/wall/callback',
       type: 'subscription',
       id: '#'
