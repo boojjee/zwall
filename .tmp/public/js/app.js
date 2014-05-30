@@ -39,15 +39,16 @@
           crossDomain: true,
           dataType: 'jsonp'
       }).done(function (data) {
-    
+          console.log(data);
           dataImageSTD = data.data[0].images.standard_resolution.url;
           
           ele = $('<div>', {class: 'item Hvh'}).html( 
             $('<img>',{id: data.data[0].id, src: dataImageSTD, width: 240, height: 240})
           );
-          
 
-          $("#wall-container").prepend(ele);  
+          var $newItems = $(ele);
+          $('#wall-container').prepend($newItems).isotope( 'reloadItems' ).isotope({ sortBy: 'original-order' });
+          // $("#wall-container").prepend(ele);  
 
           
 

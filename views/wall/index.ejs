@@ -1,7 +1,24 @@
-<div id="wall-container">
-  <% _.each(data.data, function(dd){ %>
-    <div class="item">
-      <img id="<%=dd.id%>" src="<%=dd.images.standard_resolution.url %>" style="width: 240px; height: 240px;">
+
+  <div class="metro-layout horizontal">
+    <div class="header">
+      <h1>Metro Flexible Navigation</h1>
+      <div class="controls">
+        <span class="down" title="Scroll down"></span>
+        <span class="up" title="Scroll up"></span>
+        <span class="next" title="Scroll left"></span>
+        <span class="prev" title="Scroll right"></span>
+        <span class="toggle-view" title="Toggle layout"></span>
+      </div>
     </div>
-  <% }); %>
-</div>
+    <div id="wall-container" class="content clearfix">
+      <div class="items">
+
+        <% _.each(data.data, function(dd){ %>
+          <div class="box">
+            <img id="<%=dd.id%>" src="<%=dd.images.standard_resolution.url %>" />
+          </div>
+        <% }); %>
+
+      </div>
+    </div>
+  </div>
