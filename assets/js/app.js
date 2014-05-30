@@ -47,7 +47,7 @@
           );
 
           var $newItems = $(ele);
-          $('#wall-container').prepend( $newItems).isotope( 'reloadItems' ).isotope({ sortBy: 'original-order' });
+          $('#wall-container').prepend($newItems).isotope( 'reloadItems' ).isotope({ sortBy: 'original-order' });
           // $("#wall-container").prepend(ele);  
 
           
