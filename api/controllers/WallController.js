@@ -24,25 +24,31 @@ var request = require('request');
 module.exports = {
 
   index: function(req, res, next){
-    Instagram.set('client_id', 'c2d7726b5d5e42138eddcd08c84f80f7');
-    Instagram.set('client_secret', '4c512b19c3d84275827bde3afd70221d');
+    var client_id = 'c2d7726b5d5e42138eddcd08c84f80f7';
+    var client_secret = '4c512b19c3d84275827bde3afd70221d';
+    var verify_token = '47710748.5b9e1e6.9d4b692d1a2a40c3911905a85671cb24';
+
+    Instagram.set('client_id', client_id);
+    Instagram.set('client_secret', client_secret);
     Instagram.set('callback_url', 'http://zwall.herokuapp.com/wall/callback');
     Instagram.set('redirect_uri', 'http://zwall.herokuapp.com/wall');
     Instagram.set('maxSockets', 10);
     criteria = _.merge({}, req.params.all(), req.body);
     var req_tag = criteria.tag
     
+
+
     var sub = Instagram.subscriptions.subscribe({
       object: 'tag',
       object_id: req_tag,
       aspect: 'media',
-      verify_token: '47710748.5b9e1e6.9d4b692d1a2a40c3911905a85671cb24',
+      verify_token: verify_token,
       callback_url: 'http://zwall.herokuapp.com/wall/callback',
       type: 'subscription',
       id: '#'
     });
     
-    var url = 'https://api.instagram.com/v1/tags/' + req_tag + '/media/recent?client_id=c2d7726b5d5e42138eddcd08c84f80f7';
+    var url = 'https://api.instagram.com/v1/tags/' + req_tag + '/media/recent?client_id=' + client_id;
     request.get(  url ,
       function (error, response, body) {
         data_req = JSON.parse(body);
@@ -63,7 +69,6 @@ module.exports = {
     var socket = req.socket;
     var io = sails.io;
 
-    console.log("post")
     var databody = req.body;
 
     _.each(databody, function(data){

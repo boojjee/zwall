@@ -41,24 +41,33 @@
       }).done(function (data) {
           console.log(data);
           dataImageSTD = data.data[0].images.standard_resolution.url;
-          
+          var data_id = data.data[0].id;
           ele = $('<div>', {class: 'box Hvh'}).html( 
-            $('<img>',{id: data.data[0].id, src: dataImageSTD })
+            $('<img>',{id: data_id, src: dataImageSTD })
           );
 
           var $newItems = $(ele);
-          
+          if($("#" + data_id).length == 0) {
+            $('.items').prepend($newItems).isotope( 'reloadItems' ).isotope({ sortBy: 'original-order' });
+            last = $('.items div:first-child');
+            lastSrc = $('.items div:first-child').find('img').attr('src');
+            nextSrc = $('items div:nth-child(2)').find('img').attr('src');
+            if( lastSrc === nextSrc ) {
+              last.remove();
+            }
+            last = $('.items').find(':first-child').removeClass('Hvh');
+          }else{
+            console.log("same");
+          }
           // $("#wall-container").prepend(ele);  
-          $('.items').prepend($newItems).isotope( 'reloadItems' ).isotope({ sortBy: 'original-order' });
+
+
+          
           
 
-          last = $('.items div:first-child');
-          lastSrc = $('.items div:first-child').find('img').attr('src');
-          nextSrc = $('items div:nth-child(2)').find('img').attr('src');
-          if( lastSrc === nextSrc ) {
-            last.remove();
-          }
-          last = $('.items').find(':first-child').removeClass('Hvh');
+
+
+
 
       }); 
     });
