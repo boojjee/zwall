@@ -16,19 +16,21 @@ img, object, embed { max-width: 100%; height: auto; }
 
 /* metro layout */
 .metro-layout { width: 100%; height: 100%; }
-.metro-layout .header { height: 10%; position: relative;overflow: hidden;clear:both; }
+.metro-layout .header { height: 10%; position: relative;}
 .metro-layout .header .head-left{
   float: left;
-  width:40%;
+  width: 40%;
   height: auto;
   position: relative;
+  display: block;
 }
 .metro-layout .header .head-right{
   float: right;
-  width:60%;
+  width: 55%;
   height: auto;
   text-align: right;
   position: relative;
+  display: block;
 }
 
 .metro-layout .header h1 { position: absolute; top: 50%; margin-top: -0.6em; left: 20px; padding-left: 0.1em; font-size: 3em; line-height: 1em; }
