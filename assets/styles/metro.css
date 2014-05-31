@@ -20,11 +20,14 @@ img, object, embed { max-width: 100%; height: auto; }
 .metro-layout .header .head-left{
   float: left;
   width:40%;
+  height: auto;
   position: relative;
 }
 .metro-layout .header .head-right{
   float: right;
   width:60%;
+  height: auto;
+  text-align: right;
   position: relative;
 }
 
