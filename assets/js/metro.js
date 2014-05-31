@@ -72,7 +72,7 @@ $(function () {
             else $container.stop().animate({
                 scrollTop: '-=' + ($('body').innerHeight() / 4 * delta)
             }, 10);
-            console.log(delta, deltaX, deltaY);
+            //console.log(delta, deltaX, deltaY);
         }
     });
     var resizeTimer;

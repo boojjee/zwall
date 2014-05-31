@@ -57,7 +57,7 @@
             }
             last = $('.items').find(':first-child').removeClass('Hvh');
           }else{
-            console.log("same");
+            // console.log("same");
           }
           // $("#wall-container").prepend(ele);  
 
