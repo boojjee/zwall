@@ -31,9 +31,10 @@ img, object, embed { max-width: 100%; height: auto; }
 }
 .metro-layout .header .topheader .right{
   float: right;
-  width: 50%;
+  width: 45%;
   height: 100%;
   position: relative;
+  padding-right: 20px;
 }
 .metro-layout .header .topheader .right h1{
   text-align: right;
